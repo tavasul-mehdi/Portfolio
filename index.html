@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Tavasul Mehdi Shah - Portfolio</title>
+    <!-- Favicon: A simple 'S' on a circular background -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzRmNDZlNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IidJbnRlcicsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNzAiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #d1d5db; /* gray-300 */
+            background-color: #111827; /* gray-900 */
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #4f46e5; /* indigo-600 */
+            border-radius: 9999px;
+        }
+        .card-project {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Animated gradient for Hero section */
+        #hero {
+            background: linear-gradient(135deg, #111827, #2d3748, #111827);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* New alert animation */
+        @keyframes slide-in-up {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .animate-slide-in-up {
+            animation: slide-in-up 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-800 bg-opacity-70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Syed Tavasul Mehdi</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition duration-300">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition duration-300">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition duration-300">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 bg-opacity-90">
+            <a href="#about" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-700">About</a>
+            <a href="#skills" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-700">Skills</a>
+            <a href="#projects" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-700">Projects</a>
+            <a href="#contact" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-20 md:h-screen flex items-center justify-center text-center px-4 md:px-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Left Side: Intro Text (Visible on mobile) -->
+            <div class="flex-1 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 animate-fade-in-up">
+                    Hello, I'm Tavasul Mehdi
+                </h1>
+                <p class="text-lg md:text-2xl font-light text-gray-400 mb-8 animate-fade-in-up">
+                    Full Stack Developer | Problem Solver | Tech Enthusiast
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#projects" class="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Side: Profile Card (Visible on mobile, will be below the text) -->
+            <div class="flex-1 flex justify-center md:justify-end mt-12 md:mt-0">
+                <div class="bg-gray-800 border border-gray-600 rounded-2xl p-8 shadow-2xl backdrop-blur-sm w-full max-w-sm">
+                    <div class="text-center mb-6">
+                        <img src="images/Mypicture_white.jpg" alt="Syed Tavasul Mehdi Shah" class="rounded-full mx-auto mb-4 border-4 border-indigo-600 object-cover h-42 w-40">
+                        <h2 class="text-2xl font-semibold text-white">Syed Tavasul Mehdi Shah</h2>
+                        <p class="text-indigo-400">Software Engineer</p>
+                    </div>
+                    <div class="flex flex-row justify-center flex-wrap gap-2 mb-6">
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Backend</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">System Design</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">DB</span>
+                    </div>
+                    <div class="flex justify-center space-x-6">
+                        <!-- Changed the anchor tag to a button with an onclick event for copying the email -->
+                        <button id="copyEmailBtnHero" class="text-gray-300 hover:text-indigo-400 transition duration-300">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </button>
+                        <a href="https://linkedin.com/in/tavasul-mehdi" target="_blank" class="text-gray-300 hover:text-indigo-400 transition duration-300">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Alert Notification -->
+    <div id="email-alert" class="fixed bottom-5 right-5 p-4 rounded-lg shadow-xl bg-gray-900 text-white transform transition-transform duration-300 ease-in-out hidden">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-green-500"></i>
+            <span>Email copied to clipboard!</span>
+            <button id="close-alert-btn" class="text-gray-500 hover:text-gray-300 focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-title text-4xl font-bold text-white mb-8">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
+                <p class="mb-4">
+                    A skilled website developer with experience in PHP, MySQL, and various web development frameworks.
+                    I am currently pursuing a B.S in Computer Engineering while working on freelance projects and contributing to team-based development efforts.
+                </p>
+                <p>
+                    My passion lies in building and optimizing backend logic and implementing responsive frontend components to create stable, scalable, and user-friendly web applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-title text-4xl font-bold text-white mb-8">Skills</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-gray-400">
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fab fa-php text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">PHP</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fas fa-database text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">MySQL</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fab fa-html5 text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">HTML</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fab fa-css3-alt text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">CSS</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fab fa-js-square text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">JavaScript</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fab fa-bootstrap text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">Bootstrap</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fas fa-code text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">CodeIgniter</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <i class="fab fa-python text-2xl text-indigo-400"></i>
+                    <span class="text-lg font-medium">Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-title text-4xl font-bold text-white mb-8">Projects</h2>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="card-project bg-gray-700 rounded-lg p-6 text-left shadow-lg border border-gray-600">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Vilosoftware</h3>
+                    <p class="text-gray-400 mb-4">
+                        Developed and maintained a LAMP-based project management system, enhancing stability, scalability, and user experience.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">PHP</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">MySQL</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Bootstrap</span>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="card-project bg-gray-700 rounded-lg p-6 text-left shadow-lg border border-gray-600">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Domino English CMS</h3>
+                    <p class="text-gray-400 mb-4">
+                        Contributed to the development and maintenance of a custom PHP-based CMS, adding new features and improving functionality.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">PHP</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">MySQL</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">jQuery</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">CodeIgniter</span>
+                        <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-title text-4xl font-bold text-white mb-8">Get in Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-lg text-gray-300 mb-8">
+                    I'm currently seeking new opportunities. Feel free to reach out!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <button id="copyEmailBtnContact" class="text-gray-300 hover:text-indigo-400 transition duration-300">
+                        <i class="fas fa-envelope text-3xl"></i>
+                    </button>
+                    <a href="https://www.linkedin.com/in/tavasul-mehdi" target="_blank" class="text-gray-300 hover:text-indigo-400 transition duration-300">
+                        <i class="fab fa-linkedin text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Syed Tavasul Mehdi Shah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Reusable function to copy email and show alert
+        const copyEmail = () => {
+            const email = 'tavasulmehdi23@gmail.com';
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Show the custom alert
+            const emailAlert = document.getElementById('email-alert');
+            emailAlert.classList.remove('hidden');
+            emailAlert.classList.add('animate-slide-in-up');
+
+            // Hide the alert after 3 seconds
+            setTimeout(() => {
+                emailAlert.classList.add('hidden');
+                emailAlert.classList.remove('animate-slide-in-up');
+            }, 3000);
+        };
+
+        // Event listeners for the email copy buttons
+        const copyEmailBtnHero = document.getElementById('copyEmailBtnHero');
+        const copyEmailBtnContact = document.getElementById('copyEmailBtnContact');
+        const closeAlertBtn = document.getElementById('close-alert-btn');
+
+        if (copyEmailBtnHero) {
+            copyEmailBtnHero.addEventListener('click', copyEmail);
+        }
+        
+        if (copyEmailBtnContact) {
+            copyEmailBtnContact.addEventListener('click', copyEmail);
+        }
+
+        if (closeAlertBtn) {
+            closeAlertBtn.addEventListener('click', () => {
+                const emailAlert = document.getElementById('email-alert');
+                emailAlert.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
