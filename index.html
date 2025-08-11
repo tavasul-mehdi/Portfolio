@@ -8,61 +8,8 @@
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzRmNDZlNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IidJbnRlcicsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNzAiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #d1d5db; /* gray-300 */
-            background-color: #111827; /* gray-900 */
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50%;
-            height: 4px;
-            background-color: #4f46e5; /* indigo-600 */
-            border-radius: 9999px;
-        }
-        .card-project {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .card-project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        /* Animated gradient for Hero section */
-        #hero {
-            background: linear-gradient(135deg, #111827, #2d3748, #111827);
-            background-size: 400% 400%;
-            animation: gradient-animation 15s ease infinite;
-        }
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* New alert animation */
-        @keyframes slide-in-up {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .animate-slide-in-up {
-            animation: slide-in-up 0.5s ease-out forwards;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
 </head>
 <body class="antialiased">
 
@@ -114,7 +61,7 @@
                     <div class="text-center mb-6">
                         <img src="images/Mypicture_white.jpg" alt="Syed Tavasul Mehdi Shah" class="rounded-full mx-auto mb-4 border-4 border-indigo-600 object-cover h-42 w-40">
                         <h2 class="text-2xl font-semibold text-white">Syed Tavasul Mehdi Shah</h2>
-                        <p class="text-indigo-400">Software Engineer</p>
+                        <p class="text-indigo-400">Computer Engineer</p>
                     </div>
                     <div class="flex flex-row justify-center flex-wrap gap-2 mb-6">
                         <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Backend</span>
@@ -264,66 +211,5 @@
         <p>&copy; 2024 Syed Tavasul Mehdi Shah. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Reusable function to copy email and show alert
-        const copyEmail = () => {
-            const email = 'tavasulmehdi23@gmail.com';
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            // Show the custom alert
-            const emailAlert = document.getElementById('email-alert');
-            emailAlert.classList.remove('hidden');
-            emailAlert.classList.add('animate-slide-in-up');
-
-            // Hide the alert after 3 seconds
-            setTimeout(() => {
-                emailAlert.classList.add('hidden');
-                emailAlert.classList.remove('animate-slide-in-up');
-            }, 3000);
-        };
-
-        // Event listeners for the email copy buttons
-        const copyEmailBtnHero = document.getElementById('copyEmailBtnHero');
-        const copyEmailBtnContact = document.getElementById('copyEmailBtnContact');
-        const closeAlertBtn = document.getElementById('close-alert-btn');
-
-        if (copyEmailBtnHero) {
-            copyEmailBtnHero.addEventListener('click', copyEmail);
-        }
-        
-        if (copyEmailBtnContact) {
-            copyEmailBtnContact.addEventListener('click', copyEmail);
-        }
-
-        if (closeAlertBtn) {
-            closeAlertBtn.addEventListener('click', () => {
-                const emailAlert = document.getElementById('email-alert');
-                emailAlert.classList.add('hidden');
-            });
-        }
-    </script>
 </body>
 </html>
